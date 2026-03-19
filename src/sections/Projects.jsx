@@ -175,7 +175,7 @@ export default function Projects() {
                                 onClick={() => { setCurrentPage(i + 1); }}
                                 className={`w-10 h-10 rounded-xl font-medium transition-all duration-200 ${currentPage === i + 1
                                     ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/30'
-                                    : 'glass text-slate-400 hover:text-white hover:bg-white/10'
+                                    : 'glass text-slate-400 hover:text-primary-600 hover:bg-white/10'
                                     }`}
                             >
                                 {i + 1}

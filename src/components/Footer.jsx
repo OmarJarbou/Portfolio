@@ -24,7 +24,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="GitHub"
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
+                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-primary-600 hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
                         >
                             <Github className="w-4 h-4" />
                         </a>
@@ -33,14 +33,14 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
+                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-primary-600 hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
                         >
                             <Linkedin className="w-4 h-4" />
                         </a>
                         <a
                             href={`mailto:${personal.email}`}
                             aria-label="Email"
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
+                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-primary-600 hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
                         >
                             <Mail className="w-4 h-4" />
                         </a>
