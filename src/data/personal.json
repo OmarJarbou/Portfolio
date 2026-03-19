@@ -1,0 +1,29 @@
+{
+    "name": "Omar Jarbou",
+    "title": "Software Engineer",
+    "tagline": "I build products that merge software intelligence with real-world hardware.",
+    "subtitle": "Full-Stack Developer · AI/ML Enthusiast · Hardware Engineer",
+    "about": "I'm a software engineer passionate about building complete systems — from the silicon to the screen. I specialize in connecting hardware and software through IoT platforms, AI-powered tools, and high-performance web applications. I believe the best engineering happens at the intersection of disciplines, and I bring that perspective to every project I work on.",
+    "highlights": [
+        {
+            "icon": "Code2",
+            "title": "Full-Stack Development",
+            "description": "From RESTful APIs to pixel-perfect UIs, I ship complete, production-ready products."
+        },
+        {
+            "icon": "Cpu",
+            "title": "Hardware Integration",
+            "description": "Embedded systems, IoT devices, and robotics — I bridge the physical and digital worlds."
+        },
+        {
+            "icon": "Brain",
+            "title": "AI & Machine Learning",
+            "description": "Computer vision, NLP, and LLM integrations that solve real, tangible problems."
+        }
+    ],
+    "email": "omar.jarbou@email.com",
+    "github": "https://github.com/OmarJarbou",
+    "linkedin": "https://linkedin.com/in/OmarJarbou",
+    "cvUrl": "/cv.pdf",
+    "location": "Available Worldwide · Remote"
+}

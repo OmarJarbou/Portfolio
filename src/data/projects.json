@@ -1,0 +1,243 @@
+[
+    {
+        "id": "smart-home-hub",
+        "title": "Smart Home Hub",
+        "description": "A full-stack IoT platform that connects and controls smart home devices through a responsive web dashboard.",
+        "longDescription": "Smart Home Hub is a comprehensive IoT management platform built to bridge the gap between hardware sensors and user-friendly interfaces. The system integrates ESP32 microcontrollers, MQTT protocol, and a modern React dashboard to deliver real-time monitoring and control of home automation devices. Users can automate lighting, temperature, security cameras, and custom sensors through a clean drag-and-drop interface. The backend handles thousands of concurrent device connections using WebSocket streaming.",
+        "techStack": [
+            "React",
+            "Node.js",
+            "MQTT",
+            "ESP32",
+            "MongoDB",
+            "WebSockets",
+            "Docker"
+        ],
+        "category": "hardware",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+            "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&q=80",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/smart-home-hub",
+        "liveLink": "",
+        "featured": true,
+        "challenges": [
+            "Handling thousands of concurrent MQTT device connections without latency spikes",
+            "Designing a real-time bidirectional sync between hardware and the web UI",
+            "Managing device state consistency when connections drop unexpectedly"
+        ],
+        "solutions": [
+            "Implemented a Node.js MQTT broker with connection pooling and message queuing for reliable delivery",
+            "Used WebSocket streams with React state reconciliation to keep UI in sync within 100ms",
+            "Designed a heartbeat protocol with automatic device reconnection and state recovery"
+        ]
+    },
+    {
+        "id": "ai-code-reviewer",
+        "title": "AI Code Reviewer",
+        "description": "An intelligent code review assistant powered by large language models that provides context-aware suggestions, bug detection, and refactoring advice.",
+        "longDescription": "AI Code Reviewer is a VS Code extension and web platform that integrates with GitHub pull requests to deliver AI-powered code analysis. It uses a fine-tuned language model to detect security vulnerabilities, performance anti-patterns, and style inconsistencies, providing actionable explanations in plain English. The tool supports 15+ programming languages and learns from team-specific coding conventions over time. CI/CD integration enables automatic review comments on every PR.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "OpenAI API",
+            "LangChain",
+            "React",
+            "TypeScript",
+            "GitHub API"
+        ],
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
+            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/ai-code-reviewer",
+        "liveLink": "https://ai-code-reviewer.netlify.app",
+        "featured": true,
+        "challenges": [
+            "Reducing LLM response latency to under 3 seconds for large code diffs",
+            "Avoiding false positives that erode developer trust in the tool",
+            "Managing token limits when reviewing files with 500+ lines of code"
+        ],
+        "solutions": [
+            "Implemented streaming responses and chunked file analysis with parallel LLM calls",
+            "Built a confidence scoring system that filters out low-certainty suggestions before display",
+            "Designed a smart context windowing algorithm to send only the most relevant code segments"
+        ]
+    },
+    {
+        "id": "ecommerce-platform",
+        "title": "E-Commerce Platform",
+        "description": "A high-performance multi-vendor marketplace with real-time inventory, payment integration, and an admin analytics dashboard.",
+        "longDescription": "A production-grade e-commerce platform built for multi-vendor businesses. The platform handles product listings, inventory management, order processing, and Stripe payment integration. An advanced admin dashboard provides real-time sales analytics, customer behavior tracking, and automated email campaigns. The architecture is designed for scale — Redis caching, CDN-optimized images, and server-side rendering give the storefront sub-second load times even during peak traffic.",
+        "techStack": [
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Redis",
+            "Stripe",
+            "Tailwind CSS",
+            "Prisma"
+        ],
+        "category": "web",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+            "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/ecommerce-platform",
+        "liveLink": "https://itech-store.netlify.app",
+        "featured": true,
+        "challenges": [
+            "Ensuring ACID compliance for concurrent order placements on the same inventory",
+            "Building a real-time inventory sync across multiple vendor storefronts",
+            "Optimizing Lighthouse scores to 95+ with dynamic product pages"
+        ],
+        "solutions": [
+            "Used PostgreSQL row-level locking and Prisma transactions to guarantee inventory integrity",
+            "Implemented Server-Sent Events (SSE) for live inventory broadcast across vendor dashboards",
+            "Adopted Next.js ISR with CDN caching + image optimization via next/image for performance"
+        ]
+    },
+    {
+        "id": "vision-attendance",
+        "title": "Vision Attendance System",
+        "description": "A facial recognition attendance system using computer vision to automate employee check-ins with live camera feeds.",
+        "longDescription": "Vision Attendance automates the workplace clock-in process using real-time facial recognition. The system processes live camera feeds, detects and identifies faces with DeepFace, and logs attendance events to a cloud database — all within 1–2 seconds. A web dashboard provides HR teams with attendance reports, late-arrival alerts, and exportable timesheets. The system runs on a Raspberry Pi 4 at the office entrance, making it a true edge AI deployment.",
+        "techStack": [
+            "Python",
+            "OpenCV",
+            "DeepFace",
+            "Flask",
+            "React",
+            "SQLite",
+            "Raspberry Pi"
+        ],
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/vision-attendance",
+        "liveLink": "",
+        "featured": false,
+        "challenges": [
+            "Achieving reliable recognition accuracy under varying lighting conditions",
+            "Running inference in under 2 seconds on a Raspberry Pi 4 without GPU acceleration",
+            "Protecting employee biometric data from unauthorized access"
+        ],
+        "solutions": [
+            "Applied adaptive histogram equalization (CLAHE) and infrared illumination for consistent lighting",
+            "Optimized the DeepFace pipeline with model caching and resolution downscaling for edge inference",
+            "Implemented AES-256 encryption for stored face embeddings with access control middleware"
+        ]
+    },
+    {
+        "id": "devconnect",
+        "title": "DevConnect",
+        "description": "A real-time collaborative coding platform where developers can pair program, share code, and solve challenges together.",
+        "longDescription": "DevConnect is a browser-based collaborative development environment designed for remote pair programming and technical interviews. It features a real-time code editor powered by operational transforms (OT), live cursor tracking, integrated video calling, and a code execution sandbox supporting 20+ languages. Teams can create private rooms, share snippets, and review session recordings. The platform is used by 500+ developers for technical interviews and coding bootcamp sessions.",
+        "techStack": [
+            "React",
+            "Node.js",
+            "Socket.io",
+            "Monaco Editor",
+            "WebRTC",
+            "Docker",
+            "Redis"
+        ],
+        "category": "web",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/devconnect",
+        "liveLink": "https://devconnect-live.netlify.app",
+        "featured": false,
+        "challenges": [
+            "Resolving edit conflicts in real-time when two users type simultaneously",
+            "Maintaining sub-50ms sync latency with up to 10 concurrent editors",
+            "Scaling WebRTC signaling for multiple video chat rooms"
+        ],
+        "solutions": [
+            "Implemented Operational Transformation (OT) algorithm for conflict-free collaborative editing",
+            "Used Redis pub/sub as a message bus between Node.js WebSocket servers for horizontal scaling",
+            "Built a TURN/STUN server setup with dynamic room management for WebRTC peer connections"
+        ]
+    },
+    {
+        "id": "robotic-arm",
+        "title": "5-Axis Robotic Arm",
+        "description": "A 3D-printed 5-axis robotic arm controlled by a custom web interface with real-time inverse kinematics calculations.",
+        "longDescription": "A fully custom-built 5-axis robotic arm designed for educational and prototyping purposes. The mechanical structure is 3D-printed with PLA and driven by servo motors controlled via an Arduino Mega. A custom web dashboard allows users to control each joint individually or use the inverse kinematics (IK) mode to position the end-effector by specifying XYZ coordinates. The IK engine runs in JavaScript using a FABRIK algorithm for smooth, natural movement. The project was featured at a university innovation expo.",
+        "techStack": [
+            "Arduino",
+            "C++",
+            "JavaScript",
+            "WebSerial API",
+            "Three.js",
+            "Python",
+            "3D Printing"
+        ],
+        "category": "hardware",
+        "image": "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=1200&q=80",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/robotic-arm",
+        "liveLink": "",
+        "featured": false,
+        "challenges": [
+            "Achieving smooth, jitter-free servo movement across all 5 axes simultaneously",
+            "Implementing real-time IK computation without blocking the control loop",
+            "Calibrating joint angle limits to prevent mechanical damage"
+        ],
+        "solutions": [
+            "Implemented a PID controller with acceleration curves on each servo channel",
+            "Offloaded FABRIK IK calculations to a Web Worker thread for non-blocking execution",
+            "Built a software end-stop system with EEPROM-stored calibration profiles per arm configuration"
+        ]
+    },
+    {
+        "id": "ai-portfolio-gen",
+        "title": "AI Portfolio Generator",
+        "description": "An automated tool that generates personalized portfolio websites using AI-driven design analysis and content generation.",
+        "longDescription": "This tool analyzes a user's GitHub profile and LinkedIn data to automatically generate a stunning, high-performance portfolio website. It uses GPT-4 for writing compelling copy and custom-trained diffusion models for generating unique UI assets. The generated sites are fully responsive, SEO-optimized, and ready for one-click deployment to Netlify or Vercel.",
+        "techStack": [
+            "Next.js",
+            "OpenAI",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Netlify API",
+            "GitHub API"
+        ],
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        "images": [
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/ai-portfolio-gen",
+        "liveLink": "https://ai-gen-portfolio.netlify.app",
+        "featured": false,
+        "challenges": [
+            "Generating unique and coherent designs for different professional backgrounds",
+            "Handling API rate limits during peak site generation traffic"
+        ],
+        "solutions": [
+            "Designed a modular component system that the AI populates with dynamic content and themes",
+            "Implemented a robust queuing system using Redis for asynchronous site builds"
+        ]
+    }
+]
