@@ -25,5 +25,10 @@
     "github": "https://github.com/OmarJarbou",
     "linkedin": "https://linkedin.com/in/OmarJarbou",
     "cvUrl": "/cv.pdf",
-    "location": "Available Worldwide · Remote"
+    "imageUrl": "/src/assets/hero-portrait.png",
+    "location": "Available Worldwide · Remote",
+    "tags": [
+        "IoT Expert",
+        "AI Maker"
+    ]
 }

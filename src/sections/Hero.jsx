@@ -9,6 +9,97 @@ const FloatingOrb = ({ className }) => (
     <div className={`absolute rounded-full blur-3xl opacity-20 animate-pulse-slow pointer-events-none ${className}`} />
 );
 
+const HeroVisual = () => {
+    return (
+        <div className="relative w-full max-w-lg aspect-square flex items-center justify-center">
+            {/* Ambient Background Glow */}
+            <div className="absolute inset-0 bg-primary-500/10 rounded-full blur-3xl" />
+
+            {/* Pulsing Outer Ring */}
+            <motion.div
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-4 rounded-full border-2 border-dashed border-primary-500/20"
+            />
+
+            {/* Rotating Decorative Rings */}
+            <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full border border-primary-500/10"
+            />
+            <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-8 rounded-full border border-accent-500/10"
+            />
+
+            {/* Main Image Container */}
+            <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative z-10 w-4/5 h-4/5 rounded-full p-2 glass border-2 border-primary-500/30 shadow-2xl overflow-hidden"
+            >
+                <div className="w-full h-full rounded-full overflow-hidden relative group">
+                    <img
+                        src={personal.imageUrl}
+                        alt={personal.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+            </motion.div>
+
+            {/* Floating Badges */}
+            <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-14 right-0 glass px-4 py-2 rounded-xl border border-primary-500/30 shadow-xl z-20"
+            >
+                <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs font-bold text-slate-200 uppercase tracking-tighter">{personal.tags[0]}</span>
+                </div>
+            </motion.div>
+
+            <motion.div
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-20 -left-5 glass px-4 py-2 rounded-xl border border-accent-500/30 shadow-xl z-20"
+            >
+                <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-accent-400" />
+                    <span className="text-xs font-bold text-slate-200 uppercase tracking-tighter">{personal.tags[1]}</span>
+                </div>
+            </motion.div>
+
+            {/* Decorative Tech Particles */}
+            {[...Array(6)].map((_, i) => (
+                <motion.div
+                    key={i}
+                    animate={{
+                        x: [0, Math.random() * 40 - 20, 0],
+                        y: [0, Math.random() * 40 - 20, 0],
+                        opacity: [0.2, 0.5, 0.2]
+                    }}
+                    transition={{
+                        duration: 3 + Math.random() * 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.5
+                    }}
+                    className="absolute w-1.5 h-1.5 rounded-full bg-primary-400/30 blur-[1px]"
+                    style={{
+                        top: `${20 + Math.random() * 60}%`,
+                        left: `${20 + Math.random() * 60}%`,
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
+
 export default function Hero() {
     const [showScrollHint, setShowScrollHint] = useState(true);
 
@@ -41,84 +132,91 @@ export default function Hero() {
             />
 
             {/* Content */}
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-20">
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-col items-center gap-6"
-                >
-                    {/* Badge */}
-                    <motion.div variants={scaleIn}>
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-500/30 text-sm font-medium text-primary-300">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            Available for Work
-                        </span>
-                    </motion.div>
-
-                    {/* Name */}
-                    <motion.h1 variants={fadeInUp} className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.08] tracking-tight text-balance">
-                        Hi, I'm{' '}
-                        <span className="gradient-text">{personal.name}</span>
-                    </motion.h1>
-
-                    {/* Title */}
-                    <motion.p
-                        variants={fadeInUp}
-                        className="text-xl sm:text-2xl font-semibold text-slate-300"
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 lg:py-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                    {/* Text Column */}
+                    <motion.div
+                        variants={staggerContainer}
+                        initial="hidden"
+                        animate="visible"
+                        className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 order-2 lg:order-1"
                     >
-                        {personal.subtitle}
-                    </motion.p>
+                        {/* Badge */}
+                        <motion.div variants={scaleIn}>
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-500/30 text-sm font-medium text-primary-300">
+                                <Sparkles className="w-3.5 h-3.5" />
+                                Available for Work
+                            </span>
+                        </motion.div>
 
-                    {/* Tagline */}
-                    <motion.p
-                        variants={fadeInUp}
-                        className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed text-balance"
-                    >
-                        {personal.tagline}
-                    </motion.p>
+                        {/* Name */}
+                        <motion.h1 variants={fadeInUp} className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.08] tracking-tight text-balance">
+                            Hi, I'm{' '}
+                            <span className="gradient-text">{personal.name}</span>
+                        </motion.h1>
 
-                    {/* CTA Buttons */}
-                    <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                        <button
-                            onClick={() => scrollTo('projects')}
-                            className="btn-primary text-base"
+                        {/* Title */}
+                        <motion.p
+                            variants={fadeInUp}
+                            className="text-xl sm:text-2xl font-semibold text-slate-300"
                         >
-                            View Projects <ArrowRight className="w-4 h-4" />
-                        </button>
-                        <button
-                            onClick={() => scrollTo('contact')}
-                            className="btn-outline text-base"
+                            {personal.subtitle}
+                        </motion.p>
+
+                        {/* Tagline */}
+                        <motion.p
+                            variants={fadeInUp}
+                            className="text-base sm:text-lg text-slate-400 max-w-2xl lg:max-w-none leading-relaxed text-balance"
                         >
-                            <Mail className="w-4 h-4" />
-                            Contact Me
-                        </button>
-                        <a
-                            href={personal.cvUrl}
-                            download
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-400 hover:text-white border border-white/10 hover:bg-white/5 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base"
-                        >
-                            <Download className="w-4 h-4" />
-                            Download CV
-                        </a>
+                            {personal.tagline}
+                        </motion.p>
+
+                        {/* CTA Buttons */}
+                        <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                            <button
+                                onClick={() => scrollTo('projects')}
+                                className="btn-primary text-base"
+                            >
+                                View Projects <ArrowRight className="w-4 h-4" />
+                            </button>
+                            <button
+                                onClick={() => scrollTo('contact')}
+                                className="btn-outline text-base"
+                            >
+                                <Mail className="w-4 h-4" />
+                                Contact Me
+                            </button>
+                            <a
+                                href={personal.cvUrl}
+                                download
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-400 hover:text-white border border-white/10 hover:bg-white/5 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base"
+                            >
+                                <Download className="w-4 h-4" />
+                                Download CV
+                            </a>
+                        </motion.div>
+
+                        {/* Social Links */}
+                        <motion.div variants={fadeInUp} className="flex items-center gap-4 pt-2">
+                            <a
+                                href={personal.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors duration-200"
+                            >
+                                <Github className="w-4 h-4" />
+                                GitHub
+                            </a>
+                            <span className="w-px h-4 bg-white/10" />
+                            <span className="text-sm text-slate-500">{personal.location}</span>
+                        </motion.div>
                     </motion.div>
 
-                    {/* Social Links */}
-                    <motion.div variants={fadeInUp} className="flex items-center gap-4 pt-2">
-                        <a
-                            href={personal.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors duration-200"
-                        >
-                            <Github className="w-4 h-4" />
-                            GitHub
-                        </a>
-                        <span className="w-px h-4 bg-white/10" />
-                        <span className="text-sm text-slate-500">{personal.location}</span>
-                    </motion.div>
-                </motion.div>
-
+                    {/* Image Column */}
+                    <div className="flex justify-center items-center order-1 lg:order-2">
+                        <HeroVisual />
+                    </div>
+                </div>
             </div>
 
             <AnimatePresence>
