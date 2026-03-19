@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { Search, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
@@ -43,8 +43,29 @@ export default function Projects() {
     }, [filtered, currentPage]);
 
     const scrollToProjects = () => {
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById('projects');
+        if (element) {
+            const offset = 10;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     };
+
+    const lastPageRef = useRef(currentPage);
+    // Scroll to projects when page changes
+    useEffect(() => {
+        if (lastPageRef.current !== currentPage) {
+            scrollToProjects();
+            lastPageRef.current = currentPage;
+        }
+    }, [currentPage]);
 
     return (
         <SectionWrapper id="projects" className="py-24 px-4 sm:px-6 max-w-6xl mx-auto">
@@ -140,7 +161,7 @@ export default function Projects() {
                     className="flex items-center justify-center gap-2 mt-12"
                 >
                     <button
-                        onClick={() => { setCurrentPage(prev => Math.max(1, prev - 1)); scrollToProjects(); }}
+                        onClick={() => { setCurrentPage(prev => Math.max(1, prev - 1)); }}
                         disabled={currentPage === 1}
                         className="p-2 rounded-xl glass disabled:opacity-20 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
                     >
@@ -151,7 +172,7 @@ export default function Projects() {
                         {[...Array(totalPages)].map((_, i) => (
                             <button
                                 key={i}
-                                onClick={() => { setCurrentPage(i + 1); scrollToProjects(); }}
+                                onClick={() => { setCurrentPage(i + 1); }}
                                 className={`w-10 h-10 rounded-xl font-medium transition-all duration-200 ${currentPage === i + 1
                                     ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/30'
                                     : 'glass text-slate-400 hover:text-white hover:bg-white/10'
@@ -163,7 +184,7 @@ export default function Projects() {
                     </div>
 
                     <button
-                        onClick={() => { setCurrentPage(prev => Math.min(totalPages, prev + 1)); scrollToProjects(); }}
+                        onClick={() => { setCurrentPage(prev => Math.min(totalPages, prev + 1)); }}
                         disabled={currentPage === totalPages}
                         className="p-2 rounded-xl glass disabled:opacity-20 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
                     >
