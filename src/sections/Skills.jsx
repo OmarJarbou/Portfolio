@@ -19,7 +19,7 @@ export default function Skills() {
                 {/* Header */}
                 <AnimatedDiv className="text-center mb-14">
                     <motion.div variants={fadeInUp}>
-                        <span className="text-primary-400 text-sm font-semibold tracking-widest uppercase">Expertise</span>
+                        <span className="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase">Expertise</span>
                         <h2 className="section-title mt-2">
                             Skills &amp; <span className="gradient-text">Technologies</span>
                         </h2>

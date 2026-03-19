@@ -14,12 +14,12 @@ export default function About() {
                     {/* Left: Text */}
                     <motion.div variants={slideInLeft} className="space-y-6">
                         <div>
-                            <span className="text-primary-400 text-sm font-semibold tracking-widest uppercase">About</span>
+                            <span className="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase">About</span>
                             <h2 className="section-title mt-2">
                                 Who <span className="gradient-text">I Am</span>
                             </h2>
                         </div>
-                        <p className="text-slate-400 text-base leading-relaxed">
+                        <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
                             {personal.about}
                         </p>
 
@@ -32,7 +32,7 @@ export default function About() {
                             ].map((stat) => (
                                 <div key={stat.label} className="glass rounded-xl p-4 text-center border border-slate-200 dark:border-white/5">
                                     <div className="text-2xl font-black gradient-text">{stat.value}</div>
-                                    <div className="text-xs text-slate-500 mt-1 font-bold uppercase tracking-tighter opacity-80">{stat.label}</div>
+                                    <div className="text-xs text-slate-600 dark:text-slate-500 mt-1 font-bold uppercase tracking-tighter opacity-80">{stat.label}</div>
                                 </div>
                             ))}
                         </div>
@@ -59,7 +59,7 @@ export default function About() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-slate-900 dark:text-white text-sm mb-1">{item.title}</h3>
-                                        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                                        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
                                     </div>
                                 </motion.div>
                             );

@@ -55,7 +55,7 @@ export default function Contact() {
                 {/* Header */}
                 <AnimatedDiv className="text-center mb-14">
                     <motion.div variants={fadeInUp}>
-                        <span className="text-primary-400 text-sm font-semibold tracking-widest uppercase">Get in Touch</span>
+                        <span className="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase">Get in Touch</span>
                         <h2 className="section-title mt-2">
                             Let's <span className="gradient-text">Connect</span>
                         </h2>
@@ -85,7 +85,7 @@ export default function Contact() {
                                     <div className={`w-10 h-10 rounded-xl glass border border-slate-200 dark:border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
                                         <Icon className={`w-5 h-5 ${card.iconColor}`} />
                                     </div>
-                                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">{card.label}</div>
+                                    <div className="text-[10px] text-slate-600 dark:text-slate-500 font-bold uppercase tracking-wider mb-1">{card.label}</div>
                                     <div className="text-sm font-bold text-slate-800 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-white transition-colors">{card.display(personal)}</div>
                                 </motion.div>
                             );

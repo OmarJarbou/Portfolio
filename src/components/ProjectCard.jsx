@@ -4,10 +4,10 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { scaleIn } from '../utils/animations';
 
 const CATEGORY_COLORS = {
-    web: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-    ai: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    hardware: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
-    mobile: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+    web: 'text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20',
+    ai: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    hardware: 'text-orange-600 dark:text-orange-400 bg-orange-500/10 border-orange-500/20',
+    mobile: 'text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-500/20',
 };
 
 export default function ProjectCard({ project }) {
@@ -45,7 +45,7 @@ export default function ProjectCard({ project }) {
                     {/* Featured badge */}
                     {project.featured && (
                         <div className="absolute top-3 right-3">
-                            <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-300 border border-primary-500/30">
+                            <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-600 dark:text-primary-300 border border-primary-500/30">
                                 Featured
                             </span>
                         </div>
