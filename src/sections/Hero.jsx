@@ -59,7 +59,7 @@ const HeroVisual = () => {
             >
                 <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-bold text-slate-200 uppercase tracking-tighter">{personal.tags[0]}</span>
+                    <span className="text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-tighter">{personal.tags[0]}</span>
                 </div>
             </motion.div>
 
@@ -69,8 +69,8 @@ const HeroVisual = () => {
                 className="absolute bottom-20 -left-5 glass px-4 py-2 rounded-xl border border-accent-500/30 shadow-xl z-20"
             >
                 <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-accent-400" />
-                    <span className="text-xs font-bold text-slate-200 uppercase tracking-tighter">{personal.tags[1]}</span>
+                    <Sparkles className="w-4 h-4 text-accent-500 dark:text-accent-400" />
+                    <span className="text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-tighter">{personal.tags[1]}</span>
                 </div>
             </motion.div>
 
@@ -124,7 +124,7 @@ export default function Hero() {
 
             {/* Dot grid */}
             <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                className="absolute inset-0 opacity-[0.05] dark:opacity-[0.03] pointer-events-none"
                 style={{
                     backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)',
                     backgroundSize: '32px 32px',
@@ -143,7 +143,7 @@ export default function Hero() {
                     >
                         {/* Badge */}
                         <motion.div variants={scaleIn}>
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-500/30 text-sm font-medium text-primary-300">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-500/30 text-sm font-medium text-primary-600 dark:text-primary-300">
                                 <Sparkles className="w-3.5 h-3.5" />
                                 Available for Work
                             </span>
@@ -158,7 +158,7 @@ export default function Hero() {
                         {/* Title */}
                         <motion.p
                             variants={fadeInUp}
-                            className="text-xl sm:text-2xl font-semibold text-slate-300"
+                            className="text-xl sm:text-2xl font-semibold text-slate-600 dark:text-slate-300"
                         >
                             {personal.subtitle}
                         </motion.p>
@@ -166,7 +166,7 @@ export default function Hero() {
                         {/* Tagline */}
                         <motion.p
                             variants={fadeInUp}
-                            className="text-base sm:text-lg text-slate-400 max-w-2xl lg:max-w-none leading-relaxed text-balance"
+                            className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl lg:max-w-none leading-relaxed text-balance"
                         >
                             {personal.tagline}
                         </motion.p>
@@ -189,7 +189,7 @@ export default function Hero() {
                             <a
                                 href={personal.cvUrl}
                                 download
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-400 hover:text-white border border-white/10 hover:bg-white/5 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-white border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base"
                             >
                                 <Download className="w-4 h-4" />
                                 Download CV
@@ -202,13 +202,13 @@ export default function Hero() {
                                 href={personal.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors duration-200"
+                                className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-white transition-colors duration-200"
                             >
                                 <Github className="w-4 h-4" />
                                 GitHub
                             </a>
-                            <span className="w-px h-4 bg-white/10" />
-                            <span className="text-sm text-slate-500">{personal.location}</span>
+                            <span className="w-px h-4 bg-slate-300 dark:bg-white/10" />
+                            <span className="text-sm text-slate-500 dark:text-slate-400">{personal.location}</span>
                         </motion.div>
                     </motion.div>
 
@@ -246,7 +246,7 @@ export default function Hero() {
                             className="group flex flex-col items-center gap-4 cursor-pointer focus:outline-none"
                         >
                             <span
-                                className="text-[10px] text-slate-500 dark:text-slate-400 font-black tracking-[0.4em] uppercase transition-all group-hover:text-primary-500 group-hover:tracking-[0.6em]"
+                                className="text-[10px] text-slate-600 dark:text-slate-400 font-black tracking-[0.4em] uppercase transition-all group-hover:text-primary-500 group-hover:tracking-[0.6em]"
                                 style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                             >
                                 Explore
