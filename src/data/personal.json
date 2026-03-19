@@ -1,34 +1,37 @@
 {
     "name": "Omar Jarbou",
-    "title": "Software Engineer",
-    "tagline": "I build products that merge software intelligence with real-world hardware.",
-    "subtitle": "Full-Stack Developer · AI/ML Enthusiast · Hardware Engineer",
-    "about": "I'm a software engineer passionate about building complete systems — from the silicon to the screen. I specialize in connecting hardware and software through IoT platforms, AI-powered tools, and high-performance web applications. I believe the best engineering happens at the intersection of disciplines, and I bring that perspective to every project I work on.",
+    "title": "Computer Engineer",
+    "tagline": "I build scalable software solutions with real-world impact.",
+    "subtitle": "Full-Stack Developer · Embedded Systems Experience",
+    "about": "I'm a computer engineering student focused on software development, building scalable and reliable applications across the full stack. I develop responsive user interfaces, mobile applications, and efficient backend APIs, with strong experience in database integration for real-world systems. In addition to software, I have hands-on experience with embedded systems, working with sensors, microcontrollers, and real-time control in practical projects.",
     "highlights": [
         {
             "icon": "Code2",
             "title": "Full-Stack Development",
-            "description": "From RESTful APIs to pixel-perfect UIs, I ship complete, production-ready products."
+            "description": "I build complete applications, from responsive frontends to backend APIs and database integration."
         },
         {
             "icon": "Cpu",
-            "title": "Hardware Integration",
-            "description": "Embedded systems, IoT devices, and robotics — I bridge the physical and digital worlds."
+            "title": "Embedded Systems",
+            "description": "Hands-on experience with sensors, microcontrollers, and real-time control in practical projects."
         },
         {
             "icon": "Brain",
-            "title": "AI & Machine Learning",
-            "description": "Computer vision, NLP, and LLM integrations that solve real, tangible problems."
+            "title": "Problem Solving & Debugging",
+            "description": "Strong ability to analyze issues, debug systems, and find practical solutions."
         }
     ],
-    "email": "omar.jarbou@email.com",
+    "email": "omarj.formal@email.com",
     "github": "https://github.com/OmarJarbou",
-    "linkedin": "https://linkedin.com/in/OmarJarbou",
-    "cvUrl": "/cv.pdf",
-    "imageUrl": "/src/assets/hero-portrait.png",
+    "linkedin": "https://www.linkedin.com/in/omar-jarbou-99a512361/",
+    "cvUrl": "/src/assets/CV_Omar_Jarbou.pdf",
+    "imageUrl": "/src/assets/me.jpeg",
     "location": "Available Worldwide · Remote",
     "tags": [
-        "IoT Expert",
-        "AI Maker"
-    ]
+        "Commitment",
+        "Quality"
+    ],
+    "experience": "1",
+    "projects": "5+",
+    "disciplines": "2"
 }

@@ -26,9 +26,9 @@ export default function About() {
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 pt-4">
                             {[
-                                { value: '6+', label: 'Projects Built' },
-                                { value: '3+', label: 'Years Experience' },
-                                { value: '3', label: 'Disciplines' },
+                                { value: personal.projects, label: 'Projects Built' },
+                                { value: personal.experience, label: 'Years Experience' },
+                                { value: personal.disciplines, label: 'Disciplines' },
                             ].map((stat) => (
                                 <div key={stat.label} className="glass rounded-xl p-4 text-center border border-slate-200 dark:border-white/5">
                                     <div className="text-2xl font-black gradient-text">{stat.value}</div>

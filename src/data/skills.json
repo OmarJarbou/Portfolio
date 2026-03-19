@@ -4,22 +4,19 @@
             "name": "React"
         },
         {
-            "name": "Next.js"
-        },
-        {
             "name": "TypeScript"
         },
         {
-            "name": "Tailwind CSS"
+            "name": "JavaScript"
         },
         {
-            "name": "Framer Motion"
+            "name": "HTML"
         },
         {
-            "name": "Three.js"
+            "name": "CSS"
         },
         {
-            "name": "Redux"
+            "name": "Flutter"
         }
     ],
     "backend": [
@@ -27,22 +24,33 @@
             "name": "Node.js"
         },
         {
-            "name": "FastAPI"
-        },
-        {
-            "name": "Express.js"
-        },
-        {
-            "name": "Flask"
+            "name": "Go (Gin)"
         },
         {
             "name": "REST APIs"
+        }
+    ],
+    "languages": [
+        {
+            "name": "JavaScript"
         },
         {
-            "name": "WebSockets"
+            "name": "TypeScript"
         },
         {
-            "name": "GraphQL"
+            "name": "Dart"
+        },
+        {
+            "name": "C/C++"
+        },
+        {
+            "name": "Java"
+        },
+        {
+            "name": "Python (Basic)"
+        },
+        {
+            "name": "PHP (Basic)"
         }
     ],
     "database": [
@@ -53,39 +61,36 @@
             "name": "MongoDB"
         },
         {
-            "name": "Redis"
+            "name": "MySQL"
         },
         {
             "name": "SQLite"
         },
         {
-            "name": "Prisma ORM"
-        },
-        {
-            "name": "Firebase"
+            "name": "Redis"
         }
     ],
-    "ai": [
+    "technologies": [
         {
-            "name": "Python"
+            "name": "JWT Authentication"
         },
         {
-            "name": "OpenCV"
+            "name": "WebSockets"
         },
         {
-            "name": "TensorFlow"
+            "name": "Stripe"
         },
         {
-            "name": "LangChain"
+            "name": "Cloudinary"
         },
         {
-            "name": "OpenAI API"
+            "name": "RabbitMQ"
         },
         {
-            "name": "DeepFace"
+            "name": "Internationalization (i18n)"
         },
         {
-            "name": "Scikit-learn"
+            "name": "Unit Testing (JUnit)"
         }
     ],
     "hardware": [
@@ -96,42 +101,39 @@
             "name": "Raspberry Pi"
         },
         {
-            "name": "ESP32"
+            "name": "Sensors Integration"
         },
         {
-            "name": "MQTT"
-        },
-        {
-            "name": "C/C++"
-        },
-        {
-            "name": "3D Printing"
-        },
-        {
-            "name": "KiCad PCB"
+            "name": "Motor Control (DC, Servo, Stepper)"
         }
     ],
     "tools": [
         {
+            "name": "Git"
+        },
+        {
             "name": "Docker"
         },
         {
-            "name": "Git"
+            "name": "Postman"
         },
         {
             "name": "Linux"
         },
         {
-            "name": "AWS"
+            "name": "Netlify"
         },
         {
-            "name": "Netlify"
+            "name": "Ngrok"
         },
         {
             "name": "CI/CD"
         },
         {
-            "name": "Figma"
+            "name": "Kubernetes (Basic)"
+        },
+        {
+            "name": "AWS (Basic)"
         }
     ]
 }

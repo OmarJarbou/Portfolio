@@ -35,41 +35,6 @@
         ]
     },
     {
-        "id": "ai-code-reviewer",
-        "title": "AI Code Reviewer",
-        "description": "An intelligent code review assistant powered by large language models that provides context-aware suggestions, bug detection, and refactoring advice.",
-        "longDescription": "AI Code Reviewer is a VS Code extension and web platform that integrates with GitHub pull requests to deliver AI-powered code analysis. It uses a fine-tuned language model to detect security vulnerabilities, performance anti-patterns, and style inconsistencies, providing actionable explanations in plain English. The tool supports 15+ programming languages and learns from team-specific coding conventions over time. CI/CD integration enables automatic review comments on every PR.",
-        "techStack": [
-            "Python",
-            "FastAPI",
-            "OpenAI API",
-            "LangChain",
-            "React",
-            "TypeScript",
-            "GitHub API"
-        ],
-        "category": "ai",
-        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
-            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
-            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/ai-code-reviewer",
-        "liveLink": "https://ai-code-reviewer.netlify.app",
-        "featured": true,
-        "challenges": [
-            "Reducing LLM response latency to under 3 seconds for large code diffs",
-            "Avoiding false positives that erode developer trust in the tool",
-            "Managing token limits when reviewing files with 500+ lines of code"
-        ],
-        "solutions": [
-            "Implemented streaming responses and chunked file analysis with parallel LLM calls",
-            "Built a confidence scoring system that filters out low-certainty suggestions before display",
-            "Designed a smart context windowing algorithm to send only the most relevant code segments"
-        ]
-    },
-    {
         "id": "ecommerce-platform",
         "title": "E-Commerce Platform",
         "description": "A high-performance multi-vendor marketplace with real-time inventory, payment integration, and an admin analytics dashboard.",
@@ -102,41 +67,6 @@
             "Used PostgreSQL row-level locking and Prisma transactions to guarantee inventory integrity",
             "Implemented Server-Sent Events (SSE) for live inventory broadcast across vendor dashboards",
             "Adopted Next.js ISR with CDN caching + image optimization via next/image for performance"
-        ]
-    },
-    {
-        "id": "vision-attendance",
-        "title": "Vision Attendance System",
-        "description": "A facial recognition attendance system using computer vision to automate employee check-ins with live camera feeds.",
-        "longDescription": "Vision Attendance automates the workplace clock-in process using real-time facial recognition. The system processes live camera feeds, detects and identifies faces with DeepFace, and logs attendance events to a cloud database — all within 1–2 seconds. A web dashboard provides HR teams with attendance reports, late-arrival alerts, and exportable timesheets. The system runs on a Raspberry Pi 4 at the office entrance, making it a true edge AI deployment.",
-        "techStack": [
-            "Python",
-            "OpenCV",
-            "DeepFace",
-            "Flask",
-            "React",
-            "SQLite",
-            "Raspberry Pi"
-        ],
-        "category": "ai",
-        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80",
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80",
-            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/vision-attendance",
-        "liveLink": "",
-        "featured": false,
-        "challenges": [
-            "Achieving reliable recognition accuracy under varying lighting conditions",
-            "Running inference in under 2 seconds on a Raspberry Pi 4 without GPU acceleration",
-            "Protecting employee biometric data from unauthorized access"
-        ],
-        "solutions": [
-            "Applied adaptive histogram equalization (CLAHE) and infrared illumination for consistent lighting",
-            "Optimized the DeepFace pipeline with model caching and resolution downscaling for edge inference",
-            "Implemented AES-256 encryption for stored face embeddings with access control middleware"
         ]
     },
     {
@@ -207,37 +137,6 @@
             "Implemented a PID controller with acceleration curves on each servo channel",
             "Offloaded FABRIK IK calculations to a Web Worker thread for non-blocking execution",
             "Built a software end-stop system with EEPROM-stored calibration profiles per arm configuration"
-        ]
-    },
-    {
-        "id": "ai-portfolio-gen",
-        "title": "AI Portfolio Generator",
-        "description": "An automated tool that generates personalized portfolio websites using AI-driven design analysis and content generation.",
-        "longDescription": "This tool analyzes a user's GitHub profile and LinkedIn data to automatically generate a stunning, high-performance portfolio website. It uses GPT-4 for writing compelling copy and custom-trained diffusion models for generating unique UI assets. The generated sites are fully responsive, SEO-optimized, and ready for one-click deployment to Netlify or Vercel.",
-        "techStack": [
-            "Next.js",
-            "OpenAI",
-            "Tailwind CSS",
-            "Framer Motion",
-            "Netlify API",
-            "GitHub API"
-        ],
-        "category": "ai",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
-            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/ai-portfolio-gen",
-        "liveLink": "https://ai-gen-portfolio.netlify.app",
-        "featured": false,
-        "challenges": [
-            "Generating unique and coherent designs for different professional backgrounds",
-            "Handling API rate limits during peak site generation traffic"
-        ],
-        "solutions": [
-            "Designed a modular component system that the AI populates with dynamic content and themes",
-            "Implemented a robust queuing system using Redis for asynchronous site builds"
         ]
     }
 ]

@@ -6,7 +6,7 @@ import SectionWrapper, { AnimatedDiv } from '../components/SectionWrapper';
 import { fadeInUp } from '../utils/animations';
 import projects from '../data/projects.json';
 
-const CATEGORIES = ['All', 'Web', 'AI', 'Hardware', 'Mobile'];
+const CATEGORIES = ['All', 'Web', 'Hardware', 'Mobile'];
 const PROJECTS_PER_PAGE = 6;
 
 export default function Projects() {
