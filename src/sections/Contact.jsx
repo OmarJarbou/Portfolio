@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Github, Linkedin, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import SectionWrapper, { AnimatedDiv } from '../components/SectionWrapper';
 import { fadeInUp, scaleIn, staggerContainer } from '../utils/animations';
 import personal from '../data/personal.json';
@@ -43,11 +44,42 @@ const CONTACT_CARDS = [
     },
 ];
 
+const encode = (data) =>
+    Object.keys(data)
+        .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+
+const INITIAL_FORM = { name: '', email: '', subject: '', message: '' };
+
 export default function Contact() {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Netlify Forms handles submission automatically
+    const [form, setForm] = useState(INITIAL_FORM);
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+    const handleChange = (e) => {
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+        try {
+            const res = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encode({ 'form-name': 'contact', ...form }),
+            });
+            if (res.ok) {
+                setStatus('success');
+                setForm(INITIAL_FORM);
+            } else {
+                setStatus('error');
+            }
+        } catch {
+            setStatus('error');
+        }
+    };
+
+    const isLoading = status === 'loading';
 
     return (
         <SectionWrapper id="contact" className="py-24 px-4 sm:px-6">
@@ -109,6 +141,7 @@ export default function Contact() {
                             onSubmit={handleSubmit}
                             className="glass rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-white/5 space-y-6 shadow-xl"
                         >
+                            {/* Hidden field required by Netlify */}
                             <input type="hidden" name="form-name" value="contact" />
 
                             <div className="grid sm:grid-cols-2 gap-4">
@@ -118,6 +151,8 @@ export default function Contact() {
                                         type="text"
                                         name="name"
                                         required
+                                        value={form.name}
+                                        onChange={handleChange}
                                         placeholder="John Doe"
                                         className="w-full px-4 py-3 rounded-xl glass text-sm text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200 border border-slate-200 dark:border-white/5"
                                     />
@@ -128,6 +163,8 @@ export default function Contact() {
                                         type="email"
                                         name="email"
                                         required
+                                        value={form.email}
+                                        onChange={handleChange}
                                         placeholder="john@example.com"
                                         className="w-full px-4 py-3 rounded-xl glass text-sm text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200 border border-slate-200 dark:border-white/5"
                                     />
@@ -140,6 +177,8 @@ export default function Contact() {
                                     type="text"
                                     name="subject"
                                     required
+                                    value={form.subject}
+                                    onChange={handleChange}
                                     placeholder="Project inquiry..."
                                     className="w-full px-4 py-3 rounded-xl glass text-sm text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200 border border-slate-200 dark:border-white/5"
                                 />
@@ -151,14 +190,52 @@ export default function Contact() {
                                     name="message"
                                     required
                                     rows={5}
+                                    value={form.message}
+                                    onChange={handleChange}
                                     placeholder="Tell me about your project..."
                                     className="w-full px-4 py-3 rounded-xl glass text-sm text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200 border border-slate-200 dark:border-white/5 resize-none"
                                 />
                             </div>
 
-                            <button type="submit" className="btn-primary w-full justify-center">
-                                <Send className="w-4 h-4" />
-                                Send Message
+                            {/* Status Messages */}
+                            <AnimatePresence mode="wait">
+                                {status === 'success' && (
+                                    <motion.div
+                                        key="success"
+                                        initial={{ opacity: 0, y: -8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0 }}
+                                        className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm font-medium bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-4 py-3"
+                                    >
+                                        <CheckCircle className="w-4 h-4 shrink-0" />
+                                        Message sent! I'll get back to you soon.
+                                    </motion.div>
+                                )}
+                                {status === 'error' && (
+                                    <motion.div
+                                        key="error"
+                                        initial={{ opacity: 0, y: -8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0 }}
+                                        className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm font-medium bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3"
+                                    >
+                                        <AlertCircle className="w-4 h-4 shrink-0" />
+                                        Something went wrong. Please try again or email me directly.
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            <button
+                                type="submit"
+                                disabled={isLoading}
+                                className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                            >
+                                {isLoading ? (
+                                    <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                    <Send className="w-4 h-4" />
+                                )}
+                                {isLoading ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
                     </AnimatedDiv>
