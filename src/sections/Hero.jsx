@@ -4,6 +4,8 @@ import { ArrowRight, Mail, Github, Download, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import personal from '../data/personal.json';
 import { fadeInUp, staggerContainer, scaleIn } from '../utils/animations';
+import myImage from '../assets/me.jpeg';
+import myCV from '../assets/CV_Omar_Jarbou.pdf';
 
 const FloatingOrb = ({ className }) => (
     <div className={`absolute rounded-full blur-3xl opacity-20 animate-pulse-slow pointer-events-none ${className}`} />
@@ -43,7 +45,7 @@ const HeroVisual = () => {
             >
                 <div className="w-full h-full rounded-full overflow-hidden relative group">
                     <img
-                        src={personal.imageUrl}
+                        src={myImage}
                         alt={personal.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -187,7 +189,7 @@ export default function Hero() {
                                 Contact Me
                             </button>
                             <a
-                                href={personal.cvUrl}
+                                href={myCV}
                                 download
                                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-white border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base"
                             >
