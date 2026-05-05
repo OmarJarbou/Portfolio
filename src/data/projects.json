@@ -1,142 +1,78 @@
 [
     {
-        "id": "smart-home-hub",
-        "title": "Smart Home Hub",
-        "description": "A full-stack IoT platform that connects and controls smart home devices through a responsive web dashboard.",
-        "longDescription": "Smart Home Hub is a comprehensive IoT management platform built to bridge the gap between hardware sensors and user-friendly interfaces. The system integrates ESP32 microcontrollers, MQTT protocol, and a modern React dashboard to deliver real-time monitoring and control of home automation devices. Users can automate lighting, temperature, security cameras, and custom sensors through a clean drag-and-drop interface. The backend handles thousands of concurrent device connections using WebSocket streaming.",
+        "id": "smart-plant-watering-scheduler",
+        "title": "Smart Plant Watering Scheduler",
+        "description": "An AI-powered plant management app using a Perceptron classifier and Simulated Annealing optimizer to predict watering needs and find optimal watering routes.",
+        "longDescription": "Smart Plant Watering Scheduler is an interactive web application that combines machine learning and metaheuristic optimization to intelligently manage garden plant watering. Users register plants on a responsive visual garden grid with positional data, growth stage, and soil conditions. A custom-built Perceptron classifier — trained via cross-validated gradient descent — predicts whether each plant needs water. A Simulated Annealing engine then solves the watering route optimization problem, minimizing total Euclidean travel distance while penalizing skipped thirsty plants and unnecessary watering of healthy ones. The app features a frame-by-frame SVG animation overlaid on the garden map, a live Chart.js cost-evolution graph, and a full iteration log table — all rendered in real time.",
         "techStack": [
-            "React",
-            "Node.js",
-            "MQTT",
-            "ESP32",
-            "MongoDB",
-            "WebSockets",
-            "Docker"
-        ],
-        "category": "hardware",
-        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-            "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&q=80",
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/smart-home-hub",
-        "liveLink": "",
-        "featured": true,
-        "challenges": [
-            "Handling thousands of concurrent MQTT device connections without latency spikes",
-            "Designing a real-time bidirectional sync between hardware and the web UI",
-            "Managing device state consistency when connections drop unexpectedly"
-        ],
-        "solutions": [
-            "Implemented a Node.js MQTT broker with connection pooling and message queuing for reliable delivery",
-            "Used WebSocket streams with React state reconciliation to keep UI in sync within 100ms",
-            "Designed a heartbeat protocol with automatic device reconnection and state recovery"
-        ]
-    },
-    {
-        "id": "ecommerce-platform",
-        "title": "E-Commerce Platform",
-        "description": "A high-performance multi-vendor marketplace with real-time inventory, payment integration, and an admin analytics dashboard.",
-        "longDescription": "A production-grade e-commerce platform built for multi-vendor businesses. The platform handles product listings, inventory management, order processing, and Stripe payment integration. An advanced admin dashboard provides real-time sales analytics, customer behavior tracking, and automated email campaigns. The architecture is designed for scale — Redis caching, CDN-optimized images, and server-side rendering give the storefront sub-second load times even during peak traffic.",
-        "techStack": [
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Redis",
-            "Stripe",
-            "Tailwind CSS",
-            "Prisma"
-        ],
-        "category": "web",
-        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
-            "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/ecommerce-platform",
-        "liveLink": "https://itech-store.netlify.app",
-        "featured": true,
-        "challenges": [
-            "Ensuring ACID compliance for concurrent order placements on the same inventory",
-            "Building a real-time inventory sync across multiple vendor storefronts",
-            "Optimizing Lighthouse scores to 95+ with dynamic product pages"
-        ],
-        "solutions": [
-            "Used PostgreSQL row-level locking and Prisma transactions to guarantee inventory integrity",
-            "Implemented Server-Sent Events (SSE) for live inventory broadcast across vendor dashboards",
-            "Adopted Next.js ISR with CDN caching + image optimization via next/image for performance"
-        ]
-    },
-    {
-        "id": "devconnect",
-        "title": "DevConnect",
-        "description": "A real-time collaborative coding platform where developers can pair program, share code, and solve challenges together.",
-        "longDescription": "DevConnect is a browser-based collaborative development environment designed for remote pair programming and technical interviews. It features a real-time code editor powered by operational transforms (OT), live cursor tracking, integrated video calling, and a code execution sandbox supporting 20+ languages. Teams can create private rooms, share snippets, and review session recordings. The platform is used by 500+ developers for technical interviews and coding bootcamp sessions.",
-        "techStack": [
-            "React",
-            "Node.js",
-            "Socket.io",
-            "Monaco Editor",
-            "WebRTC",
-            "Docker",
-            "Redis"
-        ],
-        "category": "web",
-        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
-        "images": [
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
-            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
-            "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
-        ],
-        "githubLink": "https://github.com/OmarJarbou/devconnect",
-        "liveLink": "https://devconnect-live.netlify.app",
-        "featured": false,
-        "challenges": [
-            "Resolving edit conflicts in real-time when two users type simultaneously",
-            "Maintaining sub-50ms sync latency with up to 10 concurrent editors",
-            "Scaling WebRTC signaling for multiple video chat rooms"
-        ],
-        "solutions": [
-            "Implemented Operational Transformation (OT) algorithm for conflict-free collaborative editing",
-            "Used Redis pub/sub as a message bus between Node.js WebSocket servers for horizontal scaling",
-            "Built a TURN/STUN server setup with dynamic room management for WebRTC peer connections"
-        ]
-    },
-    {
-        "id": "robotic-arm",
-        "title": "5-Axis Robotic Arm",
-        "description": "A 3D-printed 5-axis robotic arm controlled by a custom web interface with real-time inverse kinematics calculations.",
-        "longDescription": "A fully custom-built 5-axis robotic arm designed for educational and prototyping purposes. The mechanical structure is 3D-printed with PLA and driven by servo motors controlled via an Arduino Mega. A custom web dashboard allows users to control each joint individually or use the inverse kinematics (IK) mode to position the end-effector by specifying XYZ coordinates. The IK engine runs in JavaScript using a FABRIK algorithm for smooth, natural movement. The project was featured at a university innovation expo.",
-        "techStack": [
-            "Arduino",
-            "C++",
             "JavaScript",
-            "WebSerial API",
-            "Three.js",
-            "Python",
-            "3D Printing"
+            "HTML5",
+            "CSS3",
+            "Perceptron AI",
+            "Simulated Annealing",
+            "Chart.js",
+            "SVG Animation",
+            "Web Workers"
         ],
-        "category": "hardware",
-        "image": "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=800&q=80",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
         "images": [
-            "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=1200&q=80",
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
-            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80"
+            "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80",
+            "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=1200&q=80",
+            "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=1200&q=80"
         ],
-        "githubLink": "https://github.com/OmarJarbou/robotic-arm",
-        "liveLink": "",
-        "featured": false,
+        "githubLink": "",
+        "liveLink": "https://69f9fb3deaadf5bcf0830e18--unique-hotteok-145d1a.netlify.app/",
+        "featured": true,
         "challenges": [
-            "Achieving smooth, jitter-free servo movement across all 5 axes simultaneously",
-            "Implementing real-time IK computation without blocking the control loop",
-            "Calibrating joint angle limits to prevent mechanical damage"
+            "Training a Perceptron classifier to generalize across varied plant conditions without overfitting",
+            "Designing a Simulated Annealing cost function that balances distance, missed waterings, and unnecessary treatments",
+            "Rendering a responsive garden grid where plant markers stay fully visible at any screen width",
+            "Animating the SA search frame-by-frame over an SVG path overlay synchronized with a live cost chart"
         ],
         "solutions": [
-            "Implemented a PID controller with acceleration curves on each servo channel",
-            "Offloaded FABRIK IK calculations to a Web Worker thread for non-blocking execution",
-            "Built a software end-stop system with EEPROM-stored calibration profiles per arm configuration"
+            "Implemented k-fold cross-validation with an adaptive learning rate to tune the Perceptron and prevent overfitting",
+            "Crafted a multi-factor cost function with weighted penalties for skipped thirsty plants, excess waterings, and total Euclidean path length",
+            "Used percentage-based CSS positioning so plant markers pin responsively to the garden grid regardless of device width",
+            "Built a frame-buffer replay system that steps through SA iterations, redrawing SVG paths and pushing data points to Chart.js in real time"
+        ]
+    },
+    {
+        "id": "distributed-book-system",
+        "title": "Distributed Book Catalog System",
+        "description": "A microservices-based backend system for managing book inventory, search, and purchase operations with RESTful APIs.",
+        "longDescription": "A distributed backend system designed using a microservices architecture to manage a book catalog and handle purchase operations. The system is composed of three independent services: an API gateway (frontend service), a catalog service for managing books and inventory, and an order service responsible for handling purchases. Services communicate via REST APIs and are containerized using Docker. The project demonstrates core distributed system concepts such as service separation, API gateway pattern, inter-service communication, and database interaction using SQLC with SQLite/Turso.",
+        "techStack": [
+            "Go",
+            "REST APIs",
+            "Docker",
+            "SQLite",
+            "Turso",
+            "SQLC",
+            "Goose",
+            "Chi Router"
+        ],
+        "category": "backend",
+        "image": "https://i.pinimg.com/736x/d1/8d/75/d18d75734447302ecee72029252e324f.jpg",
+        "images": [
+            "https://i.pinimg.com/736x/d1/8d/75/d18d75734447302ecee72029252e324f.jpg"
+        ],
+        "githubLink": "https://github.com/OmarJarbou/DOS_Project",
+        "liveLink": "",
+        "featured": true,
+        "challenges": [
+            "Designing a microservices architecture with clear service responsibilities and communication flow",
+            "Handling inter-service communication using synchronous HTTP calls",
+            "Managing data consistency during book purchase operations across multiple services",
+            "Implementing pagination and structured API responses",
+            "Ensuring reliable database access with type-safe queries"
+        ],
+        "solutions": [
+            "Separated the system into three services (API gateway, catalog, order) following single responsibility principles",
+            "Implemented RESTful communication between services with a centralized API gateway",
+            "Used SQLC to generate type-safe database queries and reduce runtime errors",
+            "Added pagination middleware to standardize list queries across endpoints",
+            "Containerized all services using Docker for easy deployment and environment consistency"
         ]
     }
 ]

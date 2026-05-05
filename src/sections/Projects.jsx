@@ -153,6 +153,16 @@ export default function Projects() {
                 </div>
             </div>
 
+            {/* Coming Soon Note */}
+            <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-center text-slate-500 text-sm mt-10 italic"
+            >
+                ✨ More of my previous work will be added soon — stay tuned!
+            </motion.p>
+
             {/* Pagination Controls */}
             {totalPages > 1 && (
                 <motion.div
