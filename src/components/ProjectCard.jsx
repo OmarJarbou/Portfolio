@@ -4,15 +4,15 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { scaleIn } from '../utils/animations';
 
 const CATEGORY_COLORS = {
-    web: 'text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20',
-    ai: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    hardware: 'text-orange-600 dark:text-orange-400 bg-orange-500/10 border-orange-500/20',
-    mobile: 'text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-500/20',
+    web: 'text-blue-600 dark:text-blue-300 bg-blue-500/25 border-blue-500/40',
+    ai: 'text-emerald-600 dark:text-emerald-300 bg-emerald-500/25 border-emerald-500/40',
+    hardware: 'text-orange-600 dark:text-orange-300 bg-orange-500/25 border-orange-500/40',
+    mobile: 'text-purple-600 dark:text-purple-300 bg-purple-500/25 border-purple-500/40',
 };
 
 export default function ProjectCard({ project }) {
     const navigate = useNavigate();
-    const catClass = CATEGORY_COLORS[project.category] || 'text-slate-400 bg-slate-500/10 border-slate-500/20';
+    const catClass = CATEGORY_COLORS[project.category] || 'text-slate-600 dark:text-slate-300 bg-slate-500/25 border-slate-500/40';
 
     return (
         <motion.div
@@ -37,15 +37,15 @@ export default function ProjectCard({ project }) {
                         </span>
                     </div>
                     {/* Category badge */}
-                    <div className="absolute top-3 left-3">
-                        <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${catClass}`}>
+                    <div className="absolute top-3 left-3 z-10">
+                        <span className={`px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold border backdrop-blur-xl shadow-md ${catClass}`}>
                             {project.category}
                         </span>
                     </div>
                     {/* Featured badge */}
                     {project.featured && (
-                        <div className="absolute top-3 right-3">
-                            <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-600 dark:text-primary-300 border border-primary-500/30">
+                        <div className="absolute top-3 right-3 z-10">
+                            <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold bg-primary-500/30 text-primary-600 dark:text-primary-300 border border-primary-500/40 backdrop-blur-xl shadow-md">
                                 Featured
                             </span>
                         </div>
